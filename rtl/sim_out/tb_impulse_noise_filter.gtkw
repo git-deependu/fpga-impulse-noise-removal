@@ -1,0 +1,28 @@
+[*]
+[*] GTKWave Analyzer Save File
+[*]
+[dumpfile] "tb_impulse_noise_filter.vcd"
+[savefile] "tb_impulse_noise_filter.gtkw"
+[timestart] 0
+[size] 1366 768
+[pos] -1 -1
+*-18.000000 1000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] tb_impulse_noise_filter.
+[treeopen] tb_impulse_noise_filter.dut.
+@28
+tb_impulse_noise_filter.dut.clk
+tb_impulse_noise_filter.dut.rst_n
+tb_impulse_noise_filter.dut.i_valid
+@22
+tb_impulse_noise_filter.dut.i_pixel[7:0]
+@28
+tb_impulse_noise_filter.dut.win_valid
+tb_impulse_noise_filter.dut.centre_noisy
+@22
+tb_impulse_noise_filter.dut.median_out[7:0]
+@28
+tb_impulse_noise_filter.dut.o_valid
+@22
+tb_impulse_noise_filter.dut.o_pixel[7:0]
+[pattern_trace] 1
+[pattern_trace] 0
