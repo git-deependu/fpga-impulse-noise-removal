@@ -106,9 +106,18 @@ python run_verification.py
 
 ### Live Demo 2: Hardware Waveforms in GTKWave
 
-**Command:**
+**Option A (Easiest — One Click):**
+Double-click `view_waveform.bat` in the project folder.
+
+**Option B (PowerShell):**
+Navigate to the project folder first, then run GTKWave:
 ```powershell
-C:\iverilog\gtkwave\bin\gtkwave.exe rtl\sim_out\tb_impulse_noise_filter.vcd
+cd "C:\Users\Deependu Sharma\Desktop\fpga-impulse-noise-removal"
+& "C:\iverilog\gtkwave\bin\gtkwave.exe" rtl\sim_out\tb_impulse_noise_filter.vcd
+```
+*(Or run directly from any directory using the full path)*:
+```powershell
+& "C:\iverilog\gtkwave\bin\gtkwave.exe" "C:\Users\Deependu Sharma\Desktop\fpga-impulse-noise-removal\rtl\sim_out\tb_impulse_noise_filter.vcd"
 ```
 
 **Signals to add to the display:**
