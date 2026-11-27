@@ -119,7 +119,6 @@ cd "C:\Users\Deependu Sharma\Desktop\fpga-impulse-noise-removal"
 ```powershell
 & "C:\iverilog\gtkwave\bin\gtkwave.exe" "C:\Users\Deependu Sharma\Desktop\fpga-impulse-noise-removal\rtl\sim_out\tb_impulse_noise_filter.vcd"
 ```
-
 **Signals to add to the display:**
 1. `tb_impulse_noise_filter.dut.clk` (100 MHz clock)
 2. `tb_impulse_noise_filter.dut.rst_n` (Active-low reset)
@@ -152,9 +151,12 @@ Open the generated 5-panel comparison figure:
 ```
 
 **To re-run the software benchmarks:**
+
+- **Option A (One-Click):** Double-click `run_software_evaluation.bat` in the project folder.
+- **Option B (PowerShell):**
 ```powershell
-cd software_model
-python evaluate.py
+cd "C:\Users\Deependu Sharma\Desktop\fpga-impulse-noise-removal"
+& "$env:LOCALAPPDATA\Programs\Python\Python312\python.exe" software_model/evaluate.py
 ```
 This regenerates all PNG comparisons, raw hex dumps, and `results/quality_metrics.csv`.
 
@@ -162,9 +164,11 @@ This regenerates all PNG comparisons, raw hex dumps, and `results/quality_metric
 
 ### Live Demo 4: Mathematical Sorting Network Verification
 
-**Command:**
+- **Option A (One-Click):** Double-click `run_cas_verification.bat` in the project folder.
+- **Option B (PowerShell):**
 ```powershell
-python software_model/verify_cas_network.py
+cd "C:\Users\Deependu Sharma\Desktop\fpga-impulse-noise-removal"
+& "$env:LOCALAPPDATA\Programs\Python\Python312\python.exe" software_model/verify_cas_network.py
 ```
 **What this demonstrates:**
 Executes 100,000 randomized Monte-Carlo vectors through the exact 25-CAS comparator sequence used in [median_filter_3x3.v](file:///C:/Users/Deependu%20Sharma/Desktop/fpga-impulse-noise-removal/rtl/src/median_filter_3x3.v). Proves that output index `[4]` is mathematically identical to `numpy.median()` in 100,000 / 100,000 trials (0 errors).
