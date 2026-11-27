@@ -1,0 +1,30 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2022.2 (win64)
+| Date         : Fri Nov 27 2026
+| Host         : ECE-CAD-WORKSTATION
+| Command      : report_power -file ./reports/power_synth.rpt
+| Design       : impulse_noise_filter
+| Device       : xc7a35tcsg324-1
+------------------------------------------------------------------------------------
+
+Power Supply Summary
+--------------------
+Total On-Chip Power: 0.082 W
+Dynamic Power:       0.012 W (14.6%)
+Device Static Power: 0.070 W (85.4%)
+Confidence Level:    Medium
+
+Summary by Hierarchy
+--------------------
++-----------------------------------+-------+
+| Name                              | Power |
++-----------------------------------+-------+
+| impulse_noise_filter              | 0.012 |
+|   u_med (median_filter_3x3)       | 0.007 |
+|   u_win_gen (window_generator)    | 0.004 |
+|     u_lb0 (line_buffer 0)         | 0.002 |
+|     u_lb1 (line_buffer 1)         | 0.002 |
+|   u_nd (noise_detector)           | 0.000 |
+|   delay_chain & MUX               | 0.001 |
++-----------------------------------+-------+

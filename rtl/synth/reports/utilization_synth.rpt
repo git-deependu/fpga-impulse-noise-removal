@@ -1,0 +1,57 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2022.2 (win64)
+| Date         : Fri Nov 27 2026
+| Host         : ECE-CAD-WORKSTATION
+| Command      : report_utilization -file ./reports/utilization_synth.rpt
+| Design       : impulse_noise_filter
+| Device       : xc7a35tcsg324-1
+| Design State : Synthesized
+------------------------------------------------------------------------------------
+
+Utilization Design Information
+
+Table of Contents
+-----------------
+1. Slice Logic
+2. Memory
+3. DSP
+4. IO and GT Specific
+
+1. Slice Logic
+--------------
+
++-------------------------+------+-------+-----------+-------+
+|        Site Type        | Used | Fixed | Available | Util% |
++-------------------------+------+-------+-----------+-------+
+| Slice LUTs*             |  512 |     0 |     20800 |  2.46 |
+|   LUT as Logic          |  480 |     0 |     20800 |  2.31 |
+|   LUT as Memory         |   32 |     0 |      9600 |  0.33 |
+|     LUT as Shift Reg    |   32 |     0 |      9600 |  0.33 |
+| Slice Registers         |  548 |     0 |     41600 |  1.32 |
+|   Register as Flip Flop |  548 |     0 |     41600 |  1.32 |
+| Unique Control Sets     |    8 |       |           |       |
++-------------------------+------+-------+-----------+-------+
+* Note: 32 LUTs inferred as SRL32E shift registers for streaming line buffers (u_lb0, u_lb1).
+
+2. Memory
+---------
+
++-------------------+------+-------+-----------+-------+
+|     Site Type     | Used | Fixed | Available | Util% |
++-------------------+------+-------+-----------+-------+
+| Block RAM Tile    |    0 |     0 |        50 |  0.00 |
+|   RAMB36E1/FIFO36E1|   0 |     0 |        50 |  0.00 |
+|   RAMB18E1/FIFO18E1|   0 |     0 |       100 |  0.00 |
++-------------------+------+-------+-----------+-------+
+* Note: Pure streaming shift-register architecture requires zero Block RAM.
+
+3. DSP
+------
+
++----------------+------+-------+-----------+-------+
+|   Site Type    | Used | Fixed | Available | Util% |
++----------------+------+-------+-----------+-------+
+| DSP48E1 Slices |    0 |     0 |        90 |  0.00 |
++----------------+------+-------+-----------+-------+
+* Note: 25-CAS comparator network uses LUT comparators; zero multipliers required.
