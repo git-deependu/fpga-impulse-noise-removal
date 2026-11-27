@@ -1,0 +1,24 @@
+# Python artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+*.env
+.venv/
+env/
+venv/
+
+# Simulator binaries and wave dumps (generated dynamically during simulation)
+rtl/sim_out/*.vvp
+rtl/sim_out/*.vcd
+
+# EDA / Vivado temporary directories
+reports/
+*.log
+*.jou
+.Xil/
+
+# OS and Editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
