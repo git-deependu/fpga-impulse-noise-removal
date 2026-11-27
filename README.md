@@ -1,7 +1,5 @@
 # FPGA-Based Architecture for Efficient Impulse Noise Removal in Digital Images
 
-**B.Tech ECE Minor Project** · Deependu Sharma · GGSIPU (2026–2027)
-
 ---
 
 ## Quick Start
