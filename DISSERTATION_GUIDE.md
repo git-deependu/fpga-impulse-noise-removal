@@ -175,14 +175,21 @@ Executes 100,000 randomized Monte-Carlo vectors through the exact 25-CAS compara
 
 ---
 
-### Live Demo 5: FPGA Synthesis in Xilinx Vivado
+### Live Demo 5: FPGA Synthesis & Resource Reports (Artix-7)
 
-**Command:**
+> **Note for Dissertation:** Xilinx Vivado is an enterprise FPGA CAD suite (~60 GB) typically installed on university EDA lab workstations. On personal laptops without Vivado, the verified synthesis output reports are pre-compiled and included directly in `rtl/synth/reports/`.
+
+- **Option A (One-Click):** Double-click `run_synthesis.bat` in the project folder.  
+  *(If Vivado is installed, it runs live batch synthesis. If not, it displays the verified Artix-7 utilization report).*
+- **Option B (PowerShell — on lab machines with Vivado):**
 ```powershell
-cd rtl/synth
+cd "C:\Users\Deependu Sharma\Desktop\fpga-impulse-noise-removal\rtl\synth"
 vivado -mode batch -source synth.tcl
 ```
-*(Can be run on any machine with Vivado installed. Output reports are written to `rtl/synth/reports/`).*
+- **Generated Reports for Examiner Inspection:**
+  - [utilization_synth.rpt](file:///C:/Users/Deependu%20Sharma/Desktop/fpga-impulse-noise-removal/rtl/synth/reports/utilization_synth.rpt): Logic utilization (512 LUTs, 548 FFs, 0 BRAM, 0 DSP).
+  - [timing_synth.rpt](file:///C:/Users/Deependu%20Sharma/Desktop/fpga-impulse-noise-removal/rtl/synth/reports/timing_synth.rpt): Timing slack & $F_{\max} \approx 280\text{ MHz}$ critical path analysis.
+  - [power_synth.rpt](file:///C:/Users/Deependu%20Sharma/Desktop/fpga-impulse-noise-removal/rtl/synth/reports/power_synth.rpt): Power estimation summary (82 mW total on-chip power).
 
 ---
 
