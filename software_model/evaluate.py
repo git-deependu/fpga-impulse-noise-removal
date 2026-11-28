@@ -41,11 +41,17 @@ except ImportError:
     MATPLOTLIB_AVAILABLE = False
 
 
-def load_or_create_image(path: str | None) -> tuple[np.ndarray, str]:
+def load_or_create_image(path: str | None, target_size: tuple[int, int] = (64, 64)) -> tuple[np.ndarray, str]:
     if path:
+        if not os.path.isfile(path):
+            raise FileNotFoundError(f"Input image not found: {path}")
         img = Image.open(path).convert("L")
+        if img.size != target_size:
+            print(f"[i] Automatically resizing custom image from {img.size} to {target_size} for hardware line-buffer compatibility.")
+            resample_mode = getattr(Image.Resampling, "LANCZOS", Image.LANCZOS)
+            img = img.resize(target_size, resample=resample_mode)
         return np.array(img, dtype=np.uint8), os.path.splitext(os.path.basename(path))[0]
-    return make_synthetic_image(64, 64), "synthetic"
+    return make_synthetic_image(target_size[1], target_size[0]), "synthetic"
 
 
 def save_png(array: np.ndarray, path: str) -> None:
